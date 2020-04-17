@@ -6,4 +6,104 @@
     android:layout_height="match_parent"
     tools:context=".OrderActivity">
 
+    <EditText
+        android:id="@+id/prescription_text"
+        android:layout_width="320dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="100dp"
+        android:ems="10"
+        android:hint="Prescription Name"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/set_alarm"
+        android:layout_width="137dp"
+        android:layout_height="104dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/set_an_alarm"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date_text" />
+
+    <Button
+        android:id="@+id/alarm_settings"
+        android:layout_width="137dp"
+        android:layout_height="104dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/alarm_settings"
+        app:layout_constraintStart_toEndOf="@+id/set_alarm"
+        app:layout_constraintTop_toBottomOf="@+id/dosage_text" />
+
+    <EditText
+        android:id="@+id/dosage_text"
+        android:layout_width="115dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginRight="68dp"
+        android:ems="10"
+        android:hint="Dosage #"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/date_text"
+        app:layout_constraintTop_toBottomOf="@+id/rx_text" />
+
+    <EditText
+        android:id="@+id/date_text"
+        android:layout_width="145dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:inputType="date"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date_label" />
+
+    <TextView
+        android:id="@+id/date_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/date_received"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rx_text" />
+
+    <EditText
+        android:id="@+id/rx_text"
+        android:layout_width="320dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="RX number"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/prescription_text" />
+
+    <Button
+        android:id="@+id/submit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="#4CAF50"
+        android:shadowColor="#FFFFFF"
+        android:text="@string/submit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.826"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/alarm_settings"
+        android:onClick="launchMainActivity"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
