@@ -34,8 +34,9 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Holder> {
     public void onBindViewHolder(Adapter.Holder holder, int position) {
         Prescription mCurrent = prescriptionList.get(position);
         holder.viewItem.setText(mCurrent.title);
-        holder.time.setText(mCurrent.timeTo);
+        holder.time.setText(mCurrent.dosage);
         holder.image.setImageResource(mCurrent.image);
+        holder.taken.setImageResource(mCurrent.wait);
     }
 
     @Override
@@ -47,13 +48,15 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Holder> {
         public final TextView viewItem;
         public final TextView time;
         public final ImageView image;
+        public final ImageView taken;
         final Adapter mAdapter;
 
         public Holder(View itemView, Adapter adapter) {
             super(itemView);
-            viewItem = itemView.findViewById(R.id.word);
-            time = itemView.findViewById(R.id.time);
+            viewItem = itemView.findViewById(R.id.preTitle);
+            time = itemView.findViewById(R.id.dosage_num);
             image = itemView.findViewById(R.id.custom);
+            taken = itemView.findViewById(R.id.taken);
 
             this.mAdapter = adapter;
         }

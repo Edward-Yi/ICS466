@@ -2,22 +2,18 @@ package android.example.droidcafe;
 
 public class Prescription {
      String title;
-    int dose;
     String dosage;
-    String type;
-    int time;
-    String amount;
-    String timeTo;
     int image;
+    int wait;
+    String rxNum;
+    String date;
 
-    public Prescription() {
-        this.title = "Prescription";
-        this.dose = 1;
-        this.type = "pill";
-        this.dosage = dose + type;
-        this.time = 1;
-        this.amount = "Hour";
-        this.timeTo = time + amount;
+    public Prescription(String title, String dosage) {
+        this.title = title;
+        this. dosage = dosage;
         this.image = R.drawable.medicine;
+        this.wait = R.drawable.ic_wait;
+        this.rxNum = "";
+        this.date = "";
     }
 }

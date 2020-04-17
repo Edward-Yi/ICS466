@@ -4,18 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:paddingTop="40dp"
+    android:paddingEnd="-10dp"
+    android:paddingRight="0dp"
+    android:paddingBottom="50dp"
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_main">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
-        android:layout_width="413dp"
-        android:layout_height="581dp"
-        android:padding="6dp"
+        android:layout_width="423dp"
+        android:layout_height="542dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-    </androidx.recyclerview.widget.RecyclerView>
+        app:layout_constraintTop_toTopOf="parent"></androidx.recyclerview.widget.RecyclerView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
