@@ -1,6 +1,5 @@
 package android.example.droidcafe;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -12,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
-import android.widget.TextView;
 
 import java.util.LinkedList;
 
@@ -28,35 +26,17 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        TextView homePrescriptionLabel = findViewById(R.id.home_PrescriptionLabel);
-        TextView homeDosageLabel = findViewById(R.id.home_DosageLabel);
-
-
-        Intent intent = getIntent();
-        String prescriptionName = intent.getStringExtra(OrderActivity.PRESCRIPTION_NAME);
-        TextView textView = findViewById(R.id.prescription_name);
-        textView.setText(prescriptionName);
-
-        Intent intent2 = getIntent();
-        String dosageNumber = intent2.getStringExtra(OrderActivity.DOSAGE);
-        TextView dosageNum = findViewById(R.id.dosage_number);
-        dosageNum.setText(dosageNumber);
-
-
-
-
-
-        if(prescriptionName != null) {
-            homePrescriptionLabel.setVisibility(View.VISIBLE);
-            homeDosageLabel.setVisibility(View.VISIBLE);
-        }
-
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent =new Intent(MainActivity.this, OrderActivity.class);
-                startActivity(intent);
+                int listSize = prescriptionList.size();
+                // Add a new word to the wordList.
+                prescriptionList.addLast(new Prescription());
+                // Notify the adapter, that the data has changed.
+                mRecyclerView.getAdapter().notifyItemInserted(listSize);
+                // Scroll to the bottom.
+                mRecyclerView.smoothScrollToPosition(listSize);
             }
 
         });
@@ -64,8 +44,6 @@ public class MainActivity extends AppCompatActivity {
         mAdapter = new Adapter(this, prescriptionList);
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-
     }
 
     @Override
