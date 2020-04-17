@@ -36,6 +36,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Holder> {
         holder.viewItem.setText(mCurrent.title);
         holder.time.setText(mCurrent.timeTo);
         holder.image.setImageResource(mCurrent.image);
+        holder.taken.setImageResource(mCurrent.wait);
     }
 
     @Override
@@ -47,6 +48,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Holder> {
         public final TextView viewItem;
         public final TextView time;
         public final ImageView image;
+        public final ImageView taken;
         final Adapter mAdapter;
 
         public Holder(View itemView, Adapter adapter) {
@@ -54,6 +56,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.Holder> {
             viewItem = itemView.findViewById(R.id.word);
             time = itemView.findViewById(R.id.time);
             image = itemView.findViewById(R.id.custom);
+            taken = itemView.findViewById(R.id.taken);
 
             this.mAdapter = adapter;
         }

@@ -9,6 +9,7 @@ public class Prescription {
     String amount;
     String timeTo;
     int image;
+    int wait;
 
     public Prescription() {
         this.title = "Prescription";
@@ -17,7 +18,8 @@ public class Prescription {
         this.dosage = dose + type;
         this.time = 1;
         this.amount = "Hour";
-        this.timeTo = time + amount;
+        this.timeTo = time + " " + amount;
         this.image = R.drawable.medicine;
+        this.wait = R.drawable.ic_wait;
     }
 }
