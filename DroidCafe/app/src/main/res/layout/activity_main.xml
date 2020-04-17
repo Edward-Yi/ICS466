@@ -33,5 +33,4 @@
         app:backgroundTint="@android:color/white"
         app:srcCompat="@drawable/ic_add"
         tools:ignore="VectorDrawableCompat" />
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

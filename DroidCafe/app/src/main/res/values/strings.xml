@@ -1,8 +1,4 @@
 <resources>
     <string name="app_name">Prescription</string>
     <string name="settings">Settings</string>
-    <string name="date_received">Date Received</string>
-    <string name="alarm_settings">Alarm Settings</string>
-    <string name="set_an_alarm">Set an Alarm</string>
-    <string name="submit">Submit</string>
 </resources>
