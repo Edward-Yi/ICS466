@@ -5,16 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingTop="50dp"
-    android:paddingEnd="-10dp"
+    android:paddingEnd="0dp"
     android:paddingBottom="50dp"
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_main"
-    android:paddingRight="-10dp">
+    android:paddingRight="0dp">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
-        android:layout_width="408dp"
-        android:layout_height="539dp"
+        android:layout_width="423dp"
+        android:layout_height="542dp"
         android:layout_marginTop="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

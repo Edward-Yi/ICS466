@@ -48,8 +48,8 @@ public class MainActivity extends AppCompatActivity {
                 // Inflate the custom layout/view
                 View customView = inflater.inflate(R.layout.popup, null);
                 mPopupWindow = new PopupWindow(customView,
-                        LayoutParams.WRAP_CONTENT,
-                        LayoutParams.WRAP_CONTENT);
+                        900,
+                        1600);
 
                 //int listSize = prescriptionList.size();
 
