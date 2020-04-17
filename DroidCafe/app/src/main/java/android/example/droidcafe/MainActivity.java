@@ -7,17 +7,14 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.Menu;
+import android.widget.ImageButton;
 import android.widget.PopupWindow;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.RelativeLayout;
 
 import java.util.LinkedList;
@@ -51,14 +48,48 @@ public class MainActivity extends AppCompatActivity {
                         900,
                         1600);
 
-                //int listSize = prescriptionList.size();
+                // Get a reference for the custom view close button
+                ImageButton closeButton = (ImageButton) customView.findViewById(R.id.close);
 
-                // Add a new word to the wordList.
-                //prescriptionList.addLast(new Prescription());
-                // Notify the adapter, that the data has changed.
-                //mRecyclerView.getAdapter().notifyItemInserted(listSize);
-                // Scroll to the bottom.
-                //mRecyclerView.smoothScrollToPosition(listSize);
+                // Set a click listener for the popup window close button
+                closeButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        // Dismiss the popup window
+                        mPopupWindow.dismiss();
+                    }
+                });
+
+                ImageButton scan = (ImageButton) customView.findViewById(R.id.camera);
+
+                // Set a click listener for the popup window close button
+                scan.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        // Dismiss the popup window
+                        mPopupWindow.dismiss();
+                    }
+                });
+
+
+                ImageButton manual = (ImageButton) customView.findViewById(R.id.manual);
+
+                // Set a click listener for the popup window close button
+                manual.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        int listSize = prescriptionList.size();
+
+                        // Add a alarm to the list.
+                        prescriptionList.addLast(new Prescription());
+                        //Notify the adapter, that the data has changed.
+                        mRecyclerView.getAdapter().notifyItemInserted(listSize);
+                        // Scroll to the bottom.
+                        mRecyclerView.smoothScrollToPosition(listSize);
+                        mPopupWindow.dismiss();
+                    }
+                });
+
                 mPopupWindow.showAtLocation(mRelativeLayout, Gravity.CENTER,0,0);
             }
 
@@ -67,24 +98,6 @@ public class MainActivity extends AppCompatActivity {
         mAdapter = new Adapter(this, prescriptionList);
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 }
 

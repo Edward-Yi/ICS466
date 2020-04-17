@@ -10,7 +10,7 @@
     <RelativeLayout
         android:id="@+id/rl"
         android:layout_width="match_parent"
-        android:layout_height="640dp">
+        android:layout_height="597dp">
 
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
